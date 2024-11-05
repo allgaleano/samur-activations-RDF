@@ -1,7 +1,9 @@
-import Image from "next/image";
+"use client";
+import Activations from "@/components/activations";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   return (
-   <div className="h-full">SAMUR ACTIVATIONS</div>
+   <Activations />
   );
 }
