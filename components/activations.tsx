@@ -2,33 +2,8 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import Data from "./data";
-
-interface Activation {
-  activationId: string;
-  year: string;
-  month: string;
-  requestTime: string;
-  interventionTime: string;
-  districtLabel: string;
-  hospitalLabel: string;
-  emergencyType: string;
-  districtWikidataLink: string | undefined;
-  hospitalWikidataLink: string | undefined;
-}
-
-interface Binding {
-  label: { value: string };
-  year: { value: string };
-  month: { value: string };
-  requestTime: { value: string };
-  interventionTime: { value: string };
-  districtLabel: { value: string };
-  hospitalLabel: { value: string };
-  emergencyType: { value: string };
-  districtWikidataLink: { value: string };
-  hospitalWikidataLink: { value: string };
-}
+import Data from "@/components/data";
+import { Activation, Binding } from "@/types";
 
 const Activations = () => {
   const [activations, setActivations] = useState<Activation[]>([]);
@@ -119,8 +94,8 @@ const Activations = () => {
                 <Data label="Request Time" data={activation.requestTime} />
                 <Data label="Intervention Time" data={activation.interventionTime} />
                 <Data label="Emergency Type" data={activation.emergencyType} />
-                <Data label="District" data={activation.districtLabel} isLink link={activation.districtWikidataLink} />
-                <Data label="Hospital" data={activation.hospitalLabel} isLink link={activation.hospitalWikidataLink} />
+                <Data label="District" data={activation.districtLabel} hasLink link={activation.districtWikidataLink} />
+                <Data label="Hospital" data={activation.hospitalLabel} hasLink link={activation.hospitalWikidataLink} />
               </div>
             </div>
           ))}

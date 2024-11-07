@@ -1,15 +1,15 @@
 interface DataProps {
   label: string
   data: string
-  isLink?: boolean
+  hasLink?: boolean
   link?: string
 }
 
-const Data = ({ label, data, isLink, link }: DataProps) => {
+const Data = ({ label, data, hasLink, link }: DataProps) => {
   return (
     <div className="flex justify-between border-b">
       <p><strong>{label}</strong></p>
-      {isLink ? (
+      {hasLink ? (
         <a
           href={link}
           target="_blank"
