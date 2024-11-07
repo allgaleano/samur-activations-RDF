@@ -23,3 +23,12 @@ export interface Binding {
   districtWikidataLink: { value: string };
   hospitalWikidataLink: { value: string };
 }
+
+export interface HospitalBinding {
+  hospitalLabel: { value: string };
+  activationCount: { value: string };
+}
+export interface DistrictBinding {
+  districtLabel: { value: string };
+  activationCount: { value: string };
+}
