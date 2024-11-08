@@ -25,8 +25,8 @@ const ActivationCards = ({
                 <Data label="Request Time" data={activation.requestTime} />
                 <Data label="Intervention Time" data={activation.interventionTime} />
                 <Data label="Emergency Type" data={activation.emergencyType} />
-                <Data label="District" data={activation.districtLabel} hasLink link={activation.districtWikidataLink} />
-                <Data label="Hospital" data={activation.hospitalLabel} hasLink link={activation.hospitalWikidataLink} />
+                <Data label="District" data={activation.districtLabel} hasLink={activation.districtWikidataLink !== null} link={activation.districtWikidataLink} />
+                <Data label="Hospital" data={activation.hospitalLabel} hasLink={activation.hospitalWikidataLink !== null} link={activation.hospitalWikidataLink} />
               </div>
             </div>
           ))}
